@@ -17,7 +17,15 @@
         </group>
         <div><h4>Passages</h4></div>
         <div>
-          <field name="passage_ids"/>
+          <field name="passage_ids">
+            <tree string="Passages" editable="bottom">
+              <field name="sequence" widget="handle"/>
+              <button name="open_record" type="object" icon="fa-pencil-square-o"/>
+              <field name="chapter_id"/>
+              <field name="summary"/>
+              <field name="text"/>
+            </tree>
+          </field>
         </div>
       </form>
     </field>
