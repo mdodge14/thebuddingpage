@@ -14,11 +14,22 @@ class Passage(models.Model):
 
     sequence = fields.Integer(required=True, default=10)
     version = fields.Integer(index=True)
+    summary = fields.Text()
     text = fields.Text()
     chapter_id = fields.Many2one('chapter')
     version_ids = fields.One2many('passage.version', 'passage_id', copy=True)
     current_version_id = fields.Many2one('passage.version')
 
+    def open_record(self):
+        view = {
+            'name': _('Passage'),
+            'view_mode': 'form',
+            'res_model': 'passage',
+            'type': 'ir.actions.act_window',
+            'res_id': self.id,
+            'context': {'form_view_initial_mode': 'edit'},
+        }
+        return view
 
 class PassageVersion(models.Model):
     _name = "passage.version"

@@ -11,10 +11,22 @@
             <field name="name" placeholder="Name"/>
           </h1>
         </div>
-        <group>
-          <field name="chapter_ids"/>
-        </group>
+        <div><h4>Chapters</h4></div>
+        <div>
+          <field name="chapter_ids" nolabel="1"/>
+        </div>
       </form>
+    </field>
+  </record>
+
+  <record model='ir.ui.view' id='story_tree'>
+    <field name="name">story_tree</field>
+    <field name="model">story</field>
+    <field name="arch" type="xml">
+      <tree string="Stories" editable="top">
+          <button name="open_record" type="object" icon="fa-pencil-square-o"/>
+          <field name="name"/>
+      </tree>
     </field>
   </record>
 

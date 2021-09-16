@@ -13,8 +13,12 @@
         </div>
         <group>
           <field name="number" string="Chapter Number"/>
-          <field name="passage_ids"/>
+          <field name="summary"/>
         </group>
+        <div><h4>Passages</h4></div>
+        <div>
+          <field name="passage_ids"/>
+        </div>
       </form>
     </field>
   </record>
@@ -23,9 +27,11 @@
     <field name="name">chapter_tree</field>
     <field name="model">chapter</field>
     <field name="arch" type="xml">
-      <tree string="Chapters">
-          <field name="number" />
+      <tree string="Chapters" editable="bottom">
+          <field name="number" widget="handle"/>
+          <button name="open_record" type="object" icon="fa-pencil-square-o"/>
           <field name="name"/>
+          <field name="summary"/>
       </tree>
     </field>
   </record>
