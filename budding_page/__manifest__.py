@@ -14,7 +14,7 @@
         'security/ir.model.access.csv',
         'views/chapter_views.xml',
         'views/passage_views.xml',
-        'views/story_views.xml'
+        'views/story_views.xml',
         'views/menu_views.xml',
     ],
     'development_status': 'Production/Stable',
