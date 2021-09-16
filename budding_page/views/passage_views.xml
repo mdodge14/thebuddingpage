@@ -7,6 +7,7 @@
     <field name="arch" type="xml">
       <form string="Passage">
         <group>
+          <field name="summary"/>
           <field name="text"/>
         </group>
       </form>
@@ -17,9 +18,11 @@
     <field name="name">passage_tree</field>
     <field name="model">passage</field>
     <field name="arch" type="xml">
-      <tree string="Passages">
-          <field name="sequence" widget="handle"/>
-          <field name="text"/>
+      <tree string="Passages" editable="bottom">
+        <field name="sequence" widget="handle"/>
+        <button name="open_record" type="object" icon="fa-pencil-square-o"/>
+        <field name="summary"/>
+        <field name="text"/>
       </tree>
     </field>
   </record>
